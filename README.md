@@ -29,6 +29,30 @@
       - Adiciona no JSON que será gerado todos os dados que não estão nulos
     - Users implements UserDetails
       - Implementar todos os métodos de UserDetails
+- Repository
+  - Criou as duas classes de repository
+  - ProductRepository 
+    - Não precisou adicionar nenhum método 
+  - UserRepository
+    - Criou um método `findByEmail`
+- JWTUtils
+  - Classe com métodos que serão utilizados para utilização do JWT
+  - Possui os métodos:
+    - `generateToken`
+      - Responsável por gerar o token
+    - `generateRefreshToken`
+      - Responsável por atualizar o token
+    - `extractUsername`
+      - Utilizado no método `isTokenValid` para validar se o nome de utilizador é válido
+    - `extractClaims`
+      - Utilizado nos métodos `extractUsername` e `isTokenExpired`
+      - O primeiro é para pegar o nome de utilizador
+      - O segundo é para pegar a data de expiração
+    - `isTokenValid`
+      - Faz a validação se o token está valido
+      - É validado o nome de utilizador e a data de expiração do token
+    - `isTokenExpired`
+      - Utilizado no método `isTokenValid` para validar se o token está expirado
 
 
 
