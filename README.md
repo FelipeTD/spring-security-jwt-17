@@ -53,8 +53,32 @@
       - É validado o nome de utilizador e a data de expiração do token
     - `isTokenExpired`
       - Utilizado no método `isTokenValid` para validar se o token está expirado
+- User Service
+  - Service implementando a classe UserDetailsService do Spring Security
+  - O método do repository `findByEmail` é utilizado aqui
+- JWT Security Filter e Config
+  - Criado a classe JWTAuthFilter
+    - No método `doFilterInternal`
+      - Na primeira validação verificamos se o `Authorization` foi passado no header
+      - Também verificamos se ele está nulo ou vazio
+      - Fazemos um substring para retirar o Bearer do header
+      - Ficamos somente com o token
+      - Dentro do if
+        - Carregamos os detalhes do usuário com o método `loadUserByUsername`
+        - Validamos se o token é valido com o método `isTokenValid`
+        - Criamos um contexto com as informações
+  - Spring Security Configuration: Criado a classe SecurityConfig
+    - No método `securityFilterChain` 
+      - São definidos quem tem acesso a quais endpoints
+    - No método `authenticationProvider`
+      - Definimos o nosso serviço para ser o serviço que será utilizado pelo Spring Security
+    - No método `passwordEncoder`
+      - Definimos o encoder que será utilizado para codificar e decodificar a senha
+    - No método `authenticationManager`
+      - Definimos um gerenciador de autenticação
+- Create Auth Service, Register, Login e.t.c
 
 
 
 
-17:23 Repository
+48:48 User Service
