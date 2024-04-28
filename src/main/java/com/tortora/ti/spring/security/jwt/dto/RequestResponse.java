@@ -3,6 +3,7 @@ package com.tortora.ti.spring.security.jwt.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.tortora.ti.spring.security.jwt.entity.Product;
+import com.tortora.ti.spring.security.jwt.entity.Users;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class RequestResponse {
     private String role;
     private String password;
     private List<Product> products;
-    private String users;
+    private Users users;
 
     public int getStatusCode() {
         return statusCode;
@@ -111,11 +112,11 @@ public class RequestResponse {
         this.products = products;
     }
 
-    public String getUsers() {
+    public Users getUsers() {
         return users;
     }
 
-    public void setUsers(String users) {
+    public void setUsers(Users users) {
         this.users = users;
     }
 

@@ -77,8 +77,31 @@
     - No método `authenticationManager`
       - Definimos um gerenciador de autenticação
 - Create Auth Service, Register, Login e.t.c
-
-
-
-
-48:48 User Service
+  - Criado a classe AuthService
+    - Essa classe possui três métodos
+    - `signUp`
+      - Responsável por realizar um novo cadastro de usuário
+    - `signIn`
+      - Responsável por realizar o acesso do usuário 
+    - `refreshToken`
+      - Responsável por gera um novo token
+- Controllers
+  - Criado a classe AuthController
+    - Possui três endpoints
+      - `signup`
+        - Cadastro de novo usuário
+      - `signIn`
+        - Acesso do utilizador
+      - `refreshToken`
+        - Atualizar o token
+  - Criado a classe AdminUsers
+    - Possui quatro endpoints
+      - `public/product`
+        - Todos podem ter acesso a esse endpoint
+        - Utilizadores não logados podem acessar esse endpoint
+      - `admin/save-product`
+        - Somente administradores logados podem acessar esse endpoint
+      - `user/alone`
+        - Somente usuários logados podem acessar esse endpoint
+      - `admin-user/both`
+        - Adminstradores e usuários logados podem acessar esse endpoint
