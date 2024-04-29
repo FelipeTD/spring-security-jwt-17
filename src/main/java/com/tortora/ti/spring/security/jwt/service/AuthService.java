@@ -90,9 +90,11 @@ public class AuthService {
             response.setRefreshToken(refreshTokenRequest.getToken());
             response.setExpirationTime("24Hr");
             response.setMessage("Successfully Refreshed Token");
+        } else {
+            response.setStatusCode(500);
+            response.setMessage("Error Refresing Token");
         }
 
-        response.setStatusCode(500);
         return response;
     }
 
